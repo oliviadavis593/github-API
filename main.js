@@ -30,6 +30,7 @@ function fetchUserName() {
 
 //Displays (renders) results to the DOM
 function displayResults(responseJson) {
-    console.log(responseJson);
-    
+    for(let i = 0; i < responseJson.length; i += 1) {
+        console.log(responseJson);
+    }
 }
