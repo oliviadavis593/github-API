@@ -1,0 +1,59 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Bebas Neue', cursive;
+    background: url(images/github-background.jpg) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+h1 {
+    text-align: center;
+    margin-top: 50px; 
+    color: #fff;
+    font-size: 55px; 
+}
+
+p {
+    color: #fff;
+    font-size: 25px; 
+}
+
+.container {
+    text-align: center;
+    margin: 0 auto;
+    width: 500px; 
+    height: 150px; 
+    border: 4px solid black;
+}
+
+.search-container {
+    height: auto; 
+}
+
+#user-input {
+    width: 150px; 
+    height: auto; 
+    
+}
+
+.submit-button {
+    width: 80px; 
+    height: auto; 
+    border: 1px solid #000; 
+}
+
+#results {
+    height: auto; 
+    margin-top: 80px; 
+    border: 4px solid black; 
+}
+
+.profile-results {
+    color: #fff;
+    font-size: 25px;
+}
