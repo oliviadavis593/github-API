@@ -41,7 +41,7 @@ function displayResults(responseJson) {
       <div class="panel-body">
        <div class= "row>
        <div class="col-md-3">
-       <a href=" ${userRepo.html_url}">Link to Repo</a>
+       <a href=" ${userRepo.html_url}" target="_blank">Link to Repo</a>
        </div>
       </div> 
     </div>`;
