@@ -3,7 +3,7 @@
 // Displays message when document has fully loaded
 $(document).ready(function() {
     console.log('App loaded. Please submit something');
-    userInput();
+    watchSubmitButton();
 });
 
 //value that user puts in 
@@ -14,7 +14,7 @@ function userInput() {
 
 //Watching for the submit button
 function watchSubmitButton() {
-    $('#search-form').sumbit(e => {
+    $('#search-form').submit(e => {
         e.preventDefault();
         fetchUserName();
     });
@@ -33,7 +33,10 @@ function fetchUserName() {
 
 //Displays (renders) results to the DOM
 function displayResults(responseJson) {
-    for(let i = 0; i < responseJson.length; i += 1) {
-        console.log(responseJson);
-    }
+    //for(let i = 0; i < responseJson.length; i += 1) {
+       // console.log(responseJson);
+    //}
+    for (const repo of responseJson) {
+        console.log(repo)
+      }
 }
