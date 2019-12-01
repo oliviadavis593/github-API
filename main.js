@@ -8,7 +8,7 @@ $(document).ready(function() {
 
 //value that user puts in 
 function userInput() {
-  let search = $('#user-input');
+  let search = $('#user-input').val();
   return search;  
 }
 
@@ -24,19 +24,28 @@ function watchSubmitButton() {
 function fetchUserName() {
     fetch('https://api.github.com/users/' + userInput() + '/repos')
         .then(response => response.json())
-        .then(response => {
-            console.log(responseJson)
-            displayResults(responseJson)
-        })
+        .then(responseJson => displayResults(responseJson))
         .catch(error => alert('I cannot find that. Try something else!'));
 }
 
 //Displays (renders) results to the DOM
 function displayResults(responseJson) {
-    //for(let i = 0; i < responseJson.length; i += 1) {
-       // console.log(responseJson);
-    //}
-    for (const repo of responseJson) {
-        console.log(repo)
-      }
-}
+    console.log(responseJson);
+    $(".profile-results").empty();
+    let responseHtml = "";
+    responseJson.forEach(userRepo => {
+      responseHtml += `<div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title">${userRepo.name}</h3>
+      </div>
+      <div class="panel-body">
+       <div class= "row>
+       <div class="col-md-3">
+       <a href=" ${userRepo.html_url}">Link to Repo</a>
+       </div>
+      </div> 
+    </div>`;
+    });
+    $(".profile-results").html(responseHtml);
+    $("#results").removeClass("hidden");
+  }
