@@ -24,7 +24,10 @@ function watchSubmitButton() {
 function fetchUserName() {
     fetch('https://api.github.com/users/' + userInput() + '/repos')
         .then(response => response.json())
-        .then(responseJson => displayResults(responseJson))
+        .then(response => {
+            console.log(responseJson)
+            displayResults(responseJson)
+        })
         .catch(error => alert('I cannot find that. Try something else!'));
 }
 
